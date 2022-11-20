@@ -16,9 +16,11 @@ describe('fetchBreedDescription', () => {
     });
   });
 
-  it('returns Breed not fiund when user doesnt enter any breed or breed doesnt exist', () => {
+  it('returns Breed not found when user doesnt enter any breed or breed doesnt exist', (done) => {
     fetchBreedDescription('', (err) => {
       assert.equal(err, 'Breed not found');
+
+      done();
     });
   });
 
